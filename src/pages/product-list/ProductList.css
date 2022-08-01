@@ -1,0 +1,10 @@
+.debug {
+    border: 1px solid blue;
+}
+.flex {
+    display: flex!important;
+}
+.flex-direction__column {
+    border: 1px solid red;
+    flex-direction: column!important;
+}

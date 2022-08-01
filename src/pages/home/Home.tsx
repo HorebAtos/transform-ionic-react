@@ -31,7 +31,7 @@ const Home: React.FC = () => {
                   </IonCardSubtitle>
                 </IonCardHeader>
                 <IonCardContent>
-                    <IonButton color="dark" expand="block" routerLink="/products-list">
+                    <IonButton color="dark" expand="block" routerLink="/product-list">
                           products
                     </IonButton>
                 </IonCardContent>
