@@ -22,6 +22,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import ProductList from './pages/product-list/ProductList';
+import ProductUpdate from './pages/product-update/ProductUpdate';
 
 setupIonicReact();
 
@@ -29,6 +30,9 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
+        <Route exact path="/product-update/:id">
+          <ProductUpdate />
+        </Route>
         <Route exact path="/home">
           <Home />
         </Route>
@@ -38,6 +42,7 @@ const App: React.FC = () => (
         <Route exact path="/product-list">
           <ProductList />
         </Route>
+
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

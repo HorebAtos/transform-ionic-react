@@ -1,18 +1,15 @@
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import './Home.css';
-import { Camera, CameraResultType } from "@capacitor/camera";
-import { useState } from 'react';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { useHistory } from 'react-router';
 const Home: React.FC = () => {
-  const [image, setImage] = useState<string>("");
-  const requestPermit = async () => {
-    const image = Camera.getPhoto({
-      quality: 90,
-      allowEditing: false,
-      resultType: CameraResultType.Base64,
-    });
-    let image_url = `data:image/jpg;base64,${(await image).base64String}`;
-    setImage(image_url);
+  const routerHistory = useHistory();
+  const scanCode = async () => {
+    const data = await BarcodeScanner.scan();
+    routerHistory.push(`/product-update/${data.text}`);
   };
+
+
   return (
     <IonPage>
       <IonHeader>
@@ -57,7 +54,7 @@ const Home: React.FC = () => {
                   </IonCardSubtitle>
                 </IonCardHeader>
                 <IonCardContent>
-                  <IonButton color="dark" expand="block" onClick={() => requestPermit()}>
+                  <IonButton color="dark" expand="block" onClick={() => scanCode()}>
                     open camera
                   </IonButton>
                 </IonCardContent>
@@ -71,9 +68,9 @@ const Home: React.FC = () => {
                   </IonCardSubtitle>
                 </IonCardHeader>
                 <IonCardContent>
-                  {
-                    image && <IonImg src={image} />
-                  }
+                  <IonButton routerLink={`/product-update/${'asdasd'}`}>
+                    banana
+                  </IonButton>
                 </IonCardContent>
               </IonCard>
             </IonCol>
