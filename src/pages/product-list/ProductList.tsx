@@ -1,5 +1,5 @@
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonList, IonPage, IonTitle, IonToolbar } from "@ionic/react";
-import { calendar, personCircle, map, informationCircle, trashBin, pencilSharp, eyeOffSharp, eyeSharp } from 'ionicons/icons';
+import { trashBin, pencilSharp, eyeSharp } from 'ionicons/icons';
 import "./ProductList.css";
 const ProductList = () => {
     return (
